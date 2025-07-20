@@ -157,7 +157,7 @@ Approve ✅, Reject ❌, or Edit 📝 the generated questions on preview page.
 Export your final MCQs in PDF, DOCX, or TXT format.
 
 
-📸 For a full walkthrough with screenshots, [click here → Screenshots.md](./Screenshots.md)
+📸 For a full walkthrough with screenshots, [click here → Screenshots.md](./screenshots.md)
 
 
 ---
