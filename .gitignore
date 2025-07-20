@@ -1,0 +1,35 @@
+# 📁 Node (Frontend)
+node_modules/
+build/
+dist/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 📁 Python (Backend)
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# 🗂️ Environment variables
+.env
+
+# 🔧 Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 📄 Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# 💾 Other
+frontend/.next/
+frontend/.cache/
