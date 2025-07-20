@@ -1,4 +1,4 @@
-[🔙 Go Back to README](./README.md)
+[🔙 Go Back to README](./Readme.md)
 # 📸 MCQ Wizard – Screenshots Walkthrough
 
 A visual guide to using **MCQ Wizard**, the AI-powered MCQ generation tool.
