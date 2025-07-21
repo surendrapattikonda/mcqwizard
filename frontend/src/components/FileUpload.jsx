@@ -49,10 +49,11 @@ export default function FileUpload({ onFileUpload, onError }) {
       formData.append('file', file);
       formData.append('question_count', questionCount.toString());
       
-      const response = await fetch('http://localhost:8000/generate-mcqs/', {
-        method: 'POST',
-        body: formData,
-      });
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/generate-mcqs/`, {
+  method: 'POST',
+  body: formData,
+});
+
       
       if (!response.ok) {
         const errorData = await response.json();
