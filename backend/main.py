@@ -13,11 +13,12 @@ app = FastAPI()
 # Enable CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Use frontend URL in production
-    allow_credentials=True,
+    allow_origins=["https://mcqwizard-n2ccddjeo-pattikonda-surendras-projects.vercel.app/"],  # Use exact domain from Vercel
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Changed the model to gemini-2.0-flash as requested
 model = genai.GenerativeModel("gemini-2.0-flash")
