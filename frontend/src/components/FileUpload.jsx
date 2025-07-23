@@ -49,16 +49,33 @@ export default function FileUpload({ onFileUpload, onError }) {
       formData.append('file', file);
       formData.append('question_count', questionCount.toString());
       
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/generate-mcqs/`, {
+  const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/generate-mcqs/`, {
   method: 'POST',
   body: formData,
 });
 
-      
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to process file');
+   if (!response.ok) {
+
+  let errorDetail = 'Failed to process file';
+  try {
+    // Only parse if content-type is JSON and length > 0
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      const errorData = await response.json();
+      if (errorData && errorData.detail) {
+        errorDetail = errorData.detail;
       }
+    } else {
+      // fallback: try to get text
+      const text = await response.text();
+      if (text) errorDetail = text;
+    }
+  } catch (e) {
+    // Do nothing, use default errorDetail
+  }
+  throw new Error(errorDetail);
+}
+
       
       const data = await response.json();
       onFileUpload(file, data.mcqs);
