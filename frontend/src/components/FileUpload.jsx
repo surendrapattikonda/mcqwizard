@@ -49,10 +49,14 @@ export default function FileUpload({ onFileUpload, onError }) {
       formData.append('file', file);
       formData.append('question_count', questionCount.toString());
       
-  const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/generate-mcqs/`, {
-  method: 'POST',
-  body: formData,
-});
+const response = await fetch(`https://mcqwizard-pxih.onrender.com/generate-mcqs/?question_count=${questionCount}`, {
+        method: 'POST',
+        body: formData, 
+        headers: {
+          'Accept': 'application/json',             
+        }
+      });
+
 
    if (!response.ok) {
 
