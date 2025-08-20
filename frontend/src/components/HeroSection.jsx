@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileText, Zap, Download, Sparkles } from 'lucide-react';
 import lp1 from '../assets/laptop1.png';
+import heroImage from '../assets/heroImage.jpg'
 const HeroSection = () => {
   const features = [
     {
@@ -60,7 +61,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-200">
               <img
-                src={lp1}
+                src={heroImage}
                 alt="MCQ Generation"
                 className="w-full h-auto object-cover"
               />
